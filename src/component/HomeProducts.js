@@ -4,10 +4,7 @@ import Popup from "./Popup";
 import { useState } from "react";
 
 const HomeProducts = ({ homeProducts }) => {
-  const [productImg, setProductImg] = useState("");
-  const [productDesc, setProductDesc] = useState("");
-  const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState("");
+  const [prod, setProd] = useState({});
 
   const isComponentVisible = useSelector((state) => state.isComponentVisible);
   const dispatch = useDispatch();
@@ -45,10 +42,7 @@ const HomeProducts = ({ homeProducts }) => {
                 height="100%"
                 onClick={() => {
                   togglePopup();
-                  setProductImg(product.img1);
-                  setProductDesc(product.short_desc);
-                  setProductName(product.name);
-                  setProductPrice(product.price);
+                  setProd(product);
                 }}
               />
               <p>
@@ -59,15 +53,7 @@ const HomeProducts = ({ homeProducts }) => {
           );
         })}
       </div>
-      {isComponentVisible && (
-        <Popup
-          setIsOpen={isComponentVisible}
-          productImg={productImg}
-          productDesc={productDesc}
-          productName={productName}
-          productPrice={productPrice}
-        />
-      )}
+      {isComponentVisible && <Popup prod={prod} />}
     </div>
   );
 };

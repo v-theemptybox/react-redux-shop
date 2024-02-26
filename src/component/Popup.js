@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
 
 import styles from "./Popup.module.css";
+import { Link } from "react-router-dom";
 
-const Popup = ({ productImg, productDesc, productName, productPrice }) => {
+const Popup = ({ prod }) => {
   const dispatch = useDispatch();
 
   const hidePopup = () => {
@@ -15,14 +16,23 @@ const Popup = ({ productImg, productDesc, productName, productPrice }) => {
       <div className={styles.centered}>
         <div className={`${styles.modal} w-100 h-100`}>
           <div className={styles.modalContent}>
-            <img src={productImg} alt="img" className="w-50" />
+            <img src={prod.img1} alt="img" className="w-50" />
             <div>
-              <h3 className="fw-normal">{productName}</h3>
+              <h3 className="fw-normal">{prod.name}</h3>
               <h4 className="fw-normal">
-                {(+productPrice).toLocaleString("vi-VN")} VND
+                {(+prod.price).toLocaleString("vi-VN")} VND
               </h4>
-              <p>{productDesc}</p>
-              <button className="btn btn-dark px-5">View Detail</button>
+              <p>{prod.short_desc}</p>
+              <Link
+                to={`/detail/${prod._id.$oid}`}
+                state={prod}
+                className="btn btn-dark px-5"
+                // if don't hidePopup() when returning HomePage from DetailPage then isComponentVisible is true
+                // then can't reading undefined product cause have not clicked on the product yet
+                onClick={() => hidePopup()}
+              >
+                View Detail
+              </Link>
             </div>
             <button className={styles.closeBtn} onClick={() => hidePopup()}>
               &#10006;

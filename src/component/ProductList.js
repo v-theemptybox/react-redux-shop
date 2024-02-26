@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import styles from "./ProductList.module.css";
+import { useEffect } from "react";
 
 const ProductList = ({ productList }) => {
   return (
@@ -20,7 +22,9 @@ const ProductList = ({ productList }) => {
               key={product._id.$oid}
               className={`${styles["animate-img"]} col-4 text-center`}
             >
-              <img src={product.img1} alt={product.name} className="w-75 " />
+              <Link to={`/detail/${product._id.$oid}`} state={product}>
+                <img src={product.img1} alt={product.name} className="w-75 " />
+              </Link>
               <p className="fw-medium mb-0">{product.name}</p>
               <p>{(+product.price).toLocaleString("vi-VN")} VND</p>
             </div>
@@ -28,7 +32,7 @@ const ProductList = ({ productList }) => {
         })}
       </div>
       <nav className="text-light">
-        <ul className="pagination justify-content-end">
+        <ul className="pagination justify-content-end mb-0">
           <li className="page-item">
             <a
               className="page-link text-black fw-bold"
@@ -54,6 +58,9 @@ const ProductList = ({ productList }) => {
             </a>
           </li>
         </ul>
+        <p className="text-end text-secondary fst-italic">
+          Showing 1-8 of 8 results
+        </p>
       </nav>
     </div>
   );

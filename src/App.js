@@ -11,6 +11,7 @@ import RegisterPage from "./pages/RegisterPage";
 import RootLayout from "./pages/RootLayout";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
 import "./App.css";
 
 function App() {
