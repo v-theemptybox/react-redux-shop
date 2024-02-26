@@ -4,7 +4,6 @@ import Popup from "./Popup";
 import { useState } from "react";
 
 const HomeProducts = ({ homeProducts }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [productImg, setProductImg] = useState("");
   const [productDesc, setProductDesc] = useState("");
   const [productName, setProductName] = useState("");
@@ -12,6 +11,24 @@ const HomeProducts = ({ homeProducts }) => {
 
   const isComponentVisible = useSelector((state) => state.isComponentVisible);
   const dispatch = useDispatch();
+
+  // dispatch SHOW_POPUP action
+  const showPopup = () => {
+    dispatch({ type: "SHOW_POPUP" });
+  };
+
+  // dispatch HIDE_POPUP action
+  const hidePopup = () => {
+    dispatch({ type: "HIDE_POPUP" });
+  };
+
+  const togglePopup = () => {
+    if (!isComponentVisible) {
+      showPopup();
+    } else {
+      hidePopup();
+    }
+  };
 
   return (
     <div id={styles.homeProducts}>
@@ -27,7 +44,7 @@ const HomeProducts = ({ homeProducts }) => {
                 width="100%"
                 height="100%"
                 onClick={() => {
-                  setIsOpen(true);
+                  togglePopup();
                   setProductImg(product.img1);
                   setProductDesc(product.short_desc);
                   setProductName(product.name);
@@ -42,9 +59,9 @@ const HomeProducts = ({ homeProducts }) => {
           );
         })}
       </div>
-      {isOpen && (
+      {isComponentVisible && (
         <Popup
-          setIsOpen={setIsOpen}
+          setIsOpen={isComponentVisible}
           productImg={productImg}
           productDesc={productDesc}
           productName={productName}

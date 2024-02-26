@@ -1,16 +1,17 @@
-import React from "react";
+import { useDispatch } from "react-redux";
+
 import styles from "./Popup.module.css";
 
-const Popup = ({
-  setIsOpen,
-  productImg,
-  productDesc,
-  productName,
-  productPrice,
-}) => {
+const Popup = ({ productImg, productDesc, productName, productPrice }) => {
+  const dispatch = useDispatch();
+
+  const hidePopup = () => {
+    dispatch({ type: "HIDE_POPUP" });
+  };
+
   return (
     <>
-      <div className={styles.darkBG} onClick={() => setIsOpen(false)} />
+      <div className={styles.darkBG} onClick={() => hidePopup()} />
       <div className={styles.centered}>
         <div className={`${styles.modal} w-100 h-100`}>
           <div className={styles.modalContent}>
@@ -23,10 +24,7 @@ const Popup = ({
               <p>{productDesc}</p>
               <button className="btn btn-dark px-5">View Detail</button>
             </div>
-            <button
-              className={styles.closeBtn}
-              onClick={() => setIsOpen(false)}
-            >
+            <button className={styles.closeBtn} onClick={() => hidePopup()}>
               &#10006;
             </button>
           </div>
