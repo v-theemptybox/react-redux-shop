@@ -6,7 +6,9 @@ import { useState } from "react";
 const HomeProducts = ({ homeProducts }) => {
   const [prod, setProd] = useState({});
 
-  const isComponentVisible = useSelector((state) => state.isComponentVisible);
+  const isComponentVisible = useSelector(
+    (state) => state.visibility.isComponentVisible
+  );
   const dispatch = useDispatch();
 
   // dispatch SHOW_POPUP action

@@ -1,6 +1,10 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 
 const initState = { isComponentVisible: false };
+const initAuthState = { isLoggedIn: false };
+const initCartState = {
+  listCart: JSON.parse(localStorage.getItem("cart")) || [],
+};
 
 const visibleReducer = (state = initState, action) => {
   switch (action.type) {
@@ -13,6 +17,53 @@ const visibleReducer = (state = initState, action) => {
   }
 };
 
-const store = createStore(visibleReducer);
+const authReducer = (state = initAuthState, action) => {
+  switch (action.type) {
+    case "ON_LOGIN":
+      return { ...state, isLoggedIn: true };
+    case "ON_LOGOUT":
+      return { ...state, isLoggedIn: false };
+    default:
+      return state;
+  }
+};
+
+const cartReducer = (state = initCartState, action) => {
+  switch (action.type) {
+    case "ADD_CART":
+      const newListAdd = [...state.listCart, action.payload];
+      localStorage.setItem("cart", JSON.stringify(newListAdd));
+      return {
+        ...state,
+        listCart: newListAdd,
+      };
+    case "UPDATE_CART":
+      const newListUpdate = state.listCart.map((item) =>
+        item.id === action.payload.id ? action.payload : item
+      );
+      localStorage.setItem("cart", JSON.stringify(newListUpdate));
+      return {
+        ...state,
+        listCart: newListUpdate,
+      };
+    case "DELETE_CART":
+      const newListDelete = state.listCart.filter(
+        (item) => item.id !== action.payload
+      );
+      localStorage.setItem("cart", JSON.stringify(newListDelete));
+      return {
+        ...state,
+        listCart: newListDelete,
+      };
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({
+  visibility: visibleReducer,
+  auth: authReducer,
+});
+const store = createStore(rootReducer);
 
 export default store;
