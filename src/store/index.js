@@ -39,7 +39,7 @@ const cartReducer = (state = initCartState, action) => {
       };
     case "UPDATE_CART":
       const newListUpdate = state.listCart.map((item) =>
-        item.id === action.payload.id ? action.payload : item
+        item._id.$oid === action.payload._id.$oid ? action.payload : item
       );
       localStorage.setItem("cart", JSON.stringify(newListUpdate));
       return {
@@ -48,7 +48,7 @@ const cartReducer = (state = initCartState, action) => {
       };
     case "DELETE_CART":
       const newListDelete = state.listCart.filter(
-        (item) => item.id !== action.payload
+        (item) => item._id.$oid !== action.payload
       );
       localStorage.setItem("cart", JSON.stringify(newListDelete));
       return {
@@ -63,6 +63,7 @@ const cartReducer = (state = initCartState, action) => {
 const rootReducer = combineReducers({
   visibility: visibleReducer,
   auth: authReducer,
+  cart: cartReducer,
 });
 const store = createStore(rootReducer);
 
