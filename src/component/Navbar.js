@@ -1,13 +1,32 @@
-import React from "react";
+import { useEffect } from "react";
 import styles from "./Navbar.module.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
   const loginUser = JSON.parse(localStorage.getItem("loginUser")) ?? {};
+
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch({ type: "ON_LOGOUT" });
+    localStorage.removeItem("loginUser");
+    localStorage.removeItem("cart");
+    navigate("/");
+    window.location.reload();
+  };
+
+  // check if reload page but still login
+  useEffect(() => {
+    const isLoggedInLS = localStorage.getItem("loginUser") ? true : false;
+    if (isLoggedInLS && !isLoggedIn) {
+      dispatch({ type: "ON_LOGIN" });
+    }
+  }, [dispatch, isLoggedIn]);
 
   return (
     <div className={`${styles.navbar} container`}>
@@ -20,6 +39,7 @@ const Navbar = () => {
         >
           Home
         </button>
+
         <button
           onClick={() => {
             navigate("/shop");
@@ -35,6 +55,7 @@ const Navbar = () => {
             navigate("/cart");
           }}
         >
+          <FontAwesomeIcon icon={faCartShopping} className="text-secondary" />{" "}
           Cart
         </button>
         <button
@@ -42,19 +63,10 @@ const Navbar = () => {
             navigate("/login");
           }}
         >
+          <FontAwesomeIcon icon={faUser} className="text-secondary" />{" "}
           {isLoggedIn ? `${loginUser.fullName}` : "Login"}
         </button>
-        {isLoggedIn ? (
-          <button
-            onClick={() => {
-              dispatch({ type: "ON_LOGOUT" });
-            }}
-          >
-            Logout
-          </button>
-        ) : (
-          ""
-        )}
+        {isLoggedIn ? <button onClick={handleLogout}>( Logout )</button> : ""}
       </div>
     </div>
   );

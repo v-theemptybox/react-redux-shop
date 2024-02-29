@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -8,6 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 const DetailPage = () => {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [amount, setAmount] = useState(1);
+
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
   // use useLocation() to get state pass through <Link> in react-router
   const location = useLocation();
@@ -114,7 +117,13 @@ const DetailPage = () => {
             </div>
             <button
               className="btn bg-black text-light rounded-0 fst-italic"
-              onClick={handleAddToCart}
+              onClick={() => {
+                if (isLoggedIn) {
+                  handleAddToCart();
+                } else {
+                  navigate("/login");
+                }
+              }}
             >
               Add to cart
             </button>

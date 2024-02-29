@@ -1,7 +1,9 @@
 import { createStore, combineReducers } from "redux";
 
 const initState = { isComponentVisible: false };
-const initAuthState = { isLoggedIn: false };
+const initAuthState = {
+  isLoggedIn: localStorage.getItem("isLoggedIn") === "true" ? true : false,
+};
 const initCartState = {
   listCart: JSON.parse(localStorage.getItem("cart")) || [],
 };
@@ -20,8 +22,10 @@ const visibleReducer = (state = initState, action) => {
 const authReducer = (state = initAuthState, action) => {
   switch (action.type) {
     case "ON_LOGIN":
+      localStorage.setItem("isLoggedIn", "true");
       return { ...state, isLoggedIn: true };
     case "ON_LOGOUT":
+      localStorage.setItem("isLoggedIn", "false");
       return { ...state, isLoggedIn: false };
     default:
       return state;
@@ -55,6 +59,7 @@ const cartReducer = (state = initCartState, action) => {
         ...state,
         listCart: newListDelete,
       };
+
     default:
       return state;
   }

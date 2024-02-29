@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import styles from "./Popup.module.css";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+
 const Popup = ({ prod }) => {
   const dispatch = useDispatch();
 
@@ -18,23 +21,26 @@ const Popup = ({ prod }) => {
           <div className={styles.modalContent}>
             <img src={prod.img1} alt="img" className="w-50" />
             <div>
-              <h3 className="fw-normal">{prod.name}</h3>
+              <h3 className="fw-medium">{prod.name}</h3>
               <h4 className="fw-normal">
                 {(+prod.price).toLocaleString("vi-VN")} VND
               </h4>
-              <p>{prod.short_desc}</p>
+              <p className="fw-light">{prod.short_desc}</p>
               <Link
                 to={`/detail/${prod._id.$oid}`}
                 state={prod}
-                className="btn btn-dark px-5"
+                className="btn btn-dark px-5 mt-3 rounded-0"
                 // if don't hidePopup() when returning HomePage from DetailPage then isComponentVisible is true
                 // then can't reading undefined product cause have not clicked on the product yet
                 onClick={() => hidePopup()}
               >
-                View Detail
+                <FontAwesomeIcon icon={faCartShopping} /> View Detail
               </Link>
             </div>
-            <button className={styles.closeBtn} onClick={() => hidePopup()}>
+            <button
+              className="align-self-start border-0 bg-white"
+              onClick={() => hidePopup()}
+            >
               &#10006;
             </button>
           </div>

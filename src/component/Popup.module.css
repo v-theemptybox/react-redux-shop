@@ -5,9 +5,7 @@
   height: 500%;
   z-index: 0;
   top: 50%;
-  bottom: 50%;
   left: 50%;
-  right: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -36,7 +34,7 @@
   margin-top: 12px;
 }
 
-.closeBtn {
+/* .closeBtn {
   cursor: pointer;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
   align-self: flex-start;
@@ -46,4 +44,4 @@
 
 .closeBtn:hover {
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-}
+} */

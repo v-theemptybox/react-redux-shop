@@ -6,6 +6,7 @@ const RegisterPage = () => {
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
+  const [userCart, setUserCart] = useState([]);
   const [userArr, setUserArr] = useState(
     JSON.parse(localStorage.getItem("users")) || []
   );
@@ -34,7 +35,7 @@ const RegisterPage = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (validateInput()) {
-      const newUser = { email, password, fullName, phone };
+      const newUser = { email, password, fullName, phone, userCart };
       setUserArr([...userArr, newUser]);
       localStorage.setItem("users", JSON.stringify([...userArr, newUser]));
       setEmail("");
@@ -61,6 +62,7 @@ const RegisterPage = () => {
             type="text"
             placeholder="Full Name"
             className="w-75 py-3 px-2 border border-bottom-0"
+            required
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
           />
@@ -68,21 +70,26 @@ const RegisterPage = () => {
             type="email"
             placeholder="Email"
             className="w-75 py-3 px-2 border border-bottom-0"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
+            minLength="8"
             placeholder="Password"
             className="w-75 py-3 px-2 border border-bottom-0"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <input
             type="tel"
-            maxLength="10"
+            minLength="10"
             placeholder="Phone"
             className="w-75 py-3 px-2 border"
+            required
+            pattern="[0-9]{10}"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
