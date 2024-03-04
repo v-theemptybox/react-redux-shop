@@ -85,7 +85,7 @@ const RegisterPage = () => {
           />
           <input
             type="tel"
-            minLength="10"
+            maxLength="10"
             placeholder="Phone"
             className="w-75 py-3 px-2 border"
             required

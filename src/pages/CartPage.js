@@ -30,9 +30,6 @@ const CartPage = () => {
     return totalPrice.toLocaleString("vi-VN");
   };
 
-  console.log(listCart);
-  console.log(cart);
-
   const updatedUsers = users.map((user) => {
     if (user.email === loginUser.email) {
       return { ...user, userCart: cart };

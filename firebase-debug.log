@@ -1,0 +1,148 @@
+[debug] [2024-03-04T08:12:39.358Z] ----------------------------------------------------------------------
+[debug] [2024-03-04T08:12:39.360Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js hosting:disable
+[debug] [2024-03-04T08:12:39.360Z] CLI Version:   13.4.0
+[debug] [2024-03-04T08:12:39.360Z] Platform:      win32
+[debug] [2024-03-04T08:12:39.361Z] Node Version:  v18.18.0
+[debug] [2024-03-04T08:12:39.361Z] Time:          Mon Mar 04 2024 15:12:39 GMT+0700 (Indochina Time)
+[debug] [2024-03-04T08:12:39.361Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-04T08:12:39.364Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-03-04T08:12:39.453Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-04T08:12:39.453Z] > authorizing via signed-in user (vinhnvlfx23170@funix.edu.vn)
+[debug] [2024-03-04T08:12:39.454Z] [iam] checking project shop-react-redux-app-80942 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-04T08:12:39.454Z] > refreshing access token with scopes: []
+[debug] [2024-03-04T08:12:39.455Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-03-04T08:12:39.455Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-04T08:12:39.623Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-03-04T08:12:39.624Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-04T08:12:39.641Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions [none]
+[debug] [2024-03-04T08:12:39.641Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions x-goog-quota-user=projects/shop-react-redux-app-80942
+[debug] [2024-03-04T08:12:39.641Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-04T08:12:39.960Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-03-04T08:12:39.960Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2024-03-04T08:12:40.632Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions 200
+[debug] [2024-03-04T08:12:40.632Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-04T08:12:40.633Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shop-react-redux-app-80942 [none]
+[debug] [2024-03-04T08:12:41.019Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/shop-react-redux-app-80942 200
+[debug] [2024-03-04T08:12:41.019Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/shop-react-redux-app-80942 {"projectId":"shop-react-redux-app-80942","projectNumber":"1081273773965","displayName":"shop-react-redux-app","name":"projects/shop-react-redux-app-80942","resources":{"hostingSite":"shop-react-redux-app-80942"},"state":"ACTIVE","etag":"1_cbbde776-ec54-443d-8944-d1406bf80602"}
+[debug] [2024-03-04T08:12:46.562Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/sites/shop-react-redux-app-80942/releases [none]
+[debug] [2024-03-04T08:12:46.562Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/shop-react-redux-app-80942/releases {"type":"SITE_DISABLE"}
+[debug] [2024-03-04T08:12:47.153Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/sites/shop-react-redux-app-80942/releases 200
+[debug] [2024-03-04T08:12:47.153Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/sites/shop-react-redux-app-80942/releases {"name":"sites/shop-react-redux-app-80942/releases/1709539966392000","type":"SITE_DISABLE","releaseTime":"2024-03-04T08:12:46.392Z","releaseUser":{"email":"vinhnvlfx23170@funix.edu.vn","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ6oqU8tLpN-KSXksuYI4xfM10Z91kAv0uXQ6apmXtp=mo"}}
+[info] +  Hosting has been disabled for shop-react-redux-app-80942. Deploy a new version to re-enable. 
+[debug] [2024-03-04T08:12:57.171Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:258:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-03-04T08:14:08.280Z] ----------------------------------------------------------------------
+[debug] [2024-03-04T08:14:08.282Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-03-04T08:14:08.282Z] CLI Version:   13.4.0
+[debug] [2024-03-04T08:14:08.282Z] Platform:      win32
+[debug] [2024-03-04T08:14:08.282Z] Node Version:  v18.18.0
+[debug] [2024-03-04T08:14:08.283Z] Time:          Mon Mar 04 2024 15:14:08 GMT+0700 (Indochina Time)
+[debug] [2024-03-04T08:14:08.283Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-04T08:14:08.341Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-04T08:14:08.341Z] > authorizing via signed-in user (vinhnvlfx23170@funix.edu.vn)
+[debug] [2024-03-04T08:14:08.342Z] [iam] checking project shop-react-redux-app-80942 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-04T08:14:08.343Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions [none]
+[debug] [2024-03-04T08:14:08.344Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions x-goog-quota-user=projects/shop-react-redux-app-80942
+[debug] [2024-03-04T08:14:08.344Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-04T08:14:09.337Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions 200
+[debug] [2024-03-04T08:14:09.338Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/shop-react-redux-app-80942:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-04T08:14:09.339Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/shop-react-redux-app-80942 [none]
+[debug] [2024-03-04T08:14:09.686Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/shop-react-redux-app-80942 200
+[debug] [2024-03-04T08:14:09.686Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/shop-react-redux-app-80942 {"projectId":"shop-react-redux-app-80942","projectNumber":"1081273773965","displayName":"shop-react-redux-app","name":"projects/shop-react-redux-app-80942","resources":{"hostingSite":"shop-react-redux-app-80942"},"state":"ACTIVE","etag":"1_cbbde776-ec54-443d-8944-d1406bf80602"}
+[info] 
+[info] === Deploying to 'shop-react-redux-app-80942'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2024-03-04T08:14:09.692Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/versions [none]
+[debug] [2024-03-04T08:14:09.692Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2024-03-04T08:14:10.560Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/versions 200
+[debug] [2024-03-04T08:14:10.561Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/versions {"name":"projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[shop-react-redux-app-80942]: beginning deploy... 
+[info] i  hosting[shop-react-redux-app-80942]: found 21 files in build 
+[debug] [2024-03-04T08:14:30.766Z] [hosting] uploading with 200 concurrency
+[debug] [2024-03-04T08:14:31.076Z] [hosting] hash cache [YnVpbGQ] stored for 21 files
+[debug] [2024-03-04T08:14:31.076Z] [hosting][hash queue][FINAL] {"max":236,"min":2,"avg":17.238095238095237,"active":0,"complete":21,"success":21,"errored":0,"retried":0,"total":21,"elapsed":241}
+[debug] [2024-03-04T08:14:31.077Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3:populateFiles [none]
+[debug] [2024-03-04T08:14:31.077Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3:populateFiles {"files":{"/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/img-asm03/banner1.jpg":"6add5a76185894d055c3291c5c1e1dd97bb28e471fd515fc41946bbf42273a19","/img-asm03/businessman.png":"4128448e0a394d31784adb7bc96b5ea29d6951ca49500000b72f7a9f3b28141b","/img-asm03/product_1.png":"7d7d249595323cf1ef61e13a79ccc7198ce016c2f598b39e17c5d03b58ab8eba","/img-asm03/product_2.png":"a7e154a959d95ee8a596cd90e70657ee6af6aa4caab13590b2ac8027c964087b","/img-asm03/product_3.png":"488a5f1f0ed0d6632f8f1bc6ff5a3e810b3311f33c8695960bf0682c790796d7","/img-asm03/product_4.png":"7f1358c41d5d1084ad35b5f666daadc739398f1de6ba682a425f8be950025add","/img-asm03/product_5.png":"6117337887a765d09ceea214962687c641d41203b07a469cee40254e83f88d98","/asset-manifest.json":"d42c76c981c0b38878bcbfff190697d18f6f29852e6bc7aa5b3fb3a4e1bd7f47","/index.html":"77e92765235ede4f86fbf6859bb9ad98b8dc752d998b4fa79cf0c9061794325e","/static/js/453.55b2104b.chunk.js":"eb5587a3f53c4323ff2b9a79699b3796535216192d20ebd3647402eed57f82f5","/static/js/453.55b2104b.chunk.js.map":"03f2a6bfe86afafcc145555bc73f7d66a18af02feb910bdc1e3afd77600dfcae","/static/js/main.41e7ed26.js.LICENSE.txt":"fc5b710295d431137c7277857583c61292004b8d4882783891b7bf591f926474","/static/css/main.c81f76bf.css":"6804bb85c9ae277b46d92b387a049928f360c0cc9def47365234946d3cad8ecc","/static/js/main.41e7ed26.js":"2ab63eed31ac34e9099bb78a472beb2789cbeabaaf033a566d206095977453a9","/static/css/main.c81f76bf.css.map":"e1e25d021f74f1b641a0fcf6868cca2e53b600737df1d723f4c937256eb43448","/static/js/main.41e7ed26.js.map":"06213d63ecce4a65516fb6d5d929b902933ee36de5fbff999e8990c054fbadd1"}}
+[debug] [2024-03-04T08:14:31.720Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3:populateFiles 200
+[debug] [2024-03-04T08:14:31.720Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3:populateFiles {"uploadRequiredHashes":["77e92765235ede4f86fbf6859bb9ad98b8dc752d998b4fa79cf0c9061794325e","e1e25d021f74f1b641a0fcf6868cca2e53b600737df1d723f4c937256eb43448","6804bb85c9ae277b46d92b387a049928f360c0cc9def47365234946d3cad8ecc","d42c76c981c0b38878bcbfff190697d18f6f29852e6bc7aa5b3fb3a4e1bd7f47","06213d63ecce4a65516fb6d5d929b902933ee36de5fbff999e8990c054fbadd1","2ab63eed31ac34e9099bb78a472beb2789cbeabaaf033a566d206095977453a9"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files"}
+[debug] [2024-03-04T08:14:31.721Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/77e92765235ede4f86fbf6859bb9ad98b8dc752d998b4fa79cf0c9061794325e [none]
+[debug] [2024-03-04T08:14:31.722Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/77e92765235ede4f86fbf6859bb9ad98b8dc752d998b4fa79cf0c9061794325e [stream]
+[debug] [2024-03-04T08:14:31.723Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/e1e25d021f74f1b641a0fcf6868cca2e53b600737df1d723f4c937256eb43448 [none]
+[debug] [2024-03-04T08:14:31.723Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/e1e25d021f74f1b641a0fcf6868cca2e53b600737df1d723f4c937256eb43448 [stream]
+[debug] [2024-03-04T08:14:31.724Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/6804bb85c9ae277b46d92b387a049928f360c0cc9def47365234946d3cad8ecc [none]
+[debug] [2024-03-04T08:14:31.724Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/6804bb85c9ae277b46d92b387a049928f360c0cc9def47365234946d3cad8ecc [stream]
+[debug] [2024-03-04T08:14:31.724Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/d42c76c981c0b38878bcbfff190697d18f6f29852e6bc7aa5b3fb3a4e1bd7f47 [none]
+[debug] [2024-03-04T08:14:31.724Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/d42c76c981c0b38878bcbfff190697d18f6f29852e6bc7aa5b3fb3a4e1bd7f47 [stream]
+[debug] [2024-03-04T08:14:31.725Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/06213d63ecce4a65516fb6d5d929b902933ee36de5fbff999e8990c054fbadd1 [none]
+[debug] [2024-03-04T08:14:31.725Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/06213d63ecce4a65516fb6d5d929b902933ee36de5fbff999e8990c054fbadd1 [stream]
+[debug] [2024-03-04T08:14:31.727Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/2ab63eed31ac34e9099bb78a472beb2789cbeabaaf033a566d206095977453a9 [none]
+[debug] [2024-03-04T08:14:31.727Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/2ab63eed31ac34e9099bb78a472beb2789cbeabaaf033a566d206095977453a9 [stream]
+[debug] [2024-03-04T08:14:31.728Z] [hosting][populate queue][FINAL] {"max":646,"min":646,"avg":646,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":653}
+[debug] [2024-03-04T08:14:31.728Z] [hosting] uploads queued: 6
+[debug] [2024-03-04T08:14:32.921Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/6804bb85c9ae277b46d92b387a049928f360c0cc9def47365234946d3cad8ecc 200
+[debug] [2024-03-04T08:14:32.921Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/6804bb85c9ae277b46d92b387a049928f360c0cc9def47365234946d3cad8ecc [stream]
+[debug] [2024-03-04T08:14:33.011Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/d42c76c981c0b38878bcbfff190697d18f6f29852e6bc7aa5b3fb3a4e1bd7f47 200
+[debug] [2024-03-04T08:14:33.011Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/d42c76c981c0b38878bcbfff190697d18f6f29852e6bc7aa5b3fb3a4e1bd7f47 [stream]
+[debug] [2024-03-04T08:14:33.031Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/06213d63ecce4a65516fb6d5d929b902933ee36de5fbff999e8990c054fbadd1 200
+[debug] [2024-03-04T08:14:33.031Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/06213d63ecce4a65516fb6d5d929b902933ee36de5fbff999e8990c054fbadd1 [stream]
+[debug] [2024-03-04T08:14:33.040Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/2ab63eed31ac34e9099bb78a472beb2789cbeabaaf033a566d206095977453a9 200
+[debug] [2024-03-04T08:14:33.040Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/2ab63eed31ac34e9099bb78a472beb2789cbeabaaf033a566d206095977453a9 [stream]
+[debug] [2024-03-04T08:14:33.041Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/77e92765235ede4f86fbf6859bb9ad98b8dc752d998b4fa79cf0c9061794325e 200
+[debug] [2024-03-04T08:14:33.041Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/77e92765235ede4f86fbf6859bb9ad98b8dc752d998b4fa79cf0c9061794325e [stream]
+[debug] [2024-03-04T08:14:33.069Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/e1e25d021f74f1b641a0fcf6868cca2e53b600737df1d723f4c937256eb43448 200
+[debug] [2024-03-04T08:14:33.069Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3/files/e1e25d021f74f1b641a0fcf6868cca2e53b600737df1d723f4c937256eb43448 [stream]
+[debug] [2024-03-04T08:14:33.069Z] [hosting][upload queue][FINAL] {"max":1348,"min":1200,"avg":1298,"active":0,"complete":6,"success":6,"errored":0,"retried":0,"total":6,"elapsed":1349}
+[info] +  hosting[shop-react-redux-app-80942]: file upload complete 
+[debug] [2024-03-04T08:14:33.070Z] [hosting] deploy completed after 2313ms
+[debug] [2024-03-04T08:14:33.070Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "shop-react-redux-app-80942"
+    },
+    "version": "projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3"
+  }
+]
+[info] i  hosting[shop-react-redux-app-80942]: finalizing version... 
+[debug] [2024-03-04T08:14:33.073Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3 updateMask=status%2Cconfig
+[debug] [2024-03-04T08:14:33.073Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3 {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2024-03-04T08:14:33.750Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3 200
+[debug] [2024-03-04T08:14:33.750Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3 {"name":"projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-04T08:14:10.042532Z","createUser":{"email":"vinhnvlfx23170@funix.edu.vn"},"finalizeTime":"2024-03-04T08:14:33.557188Z","finalizeUser":{"email":"vinhnvlfx23170@funix.edu.vn"}}
+[debug] [2024-03-04T08:14:33.750Z] [hosting] finalized version for shop-react-redux-app-80942:[object Object]
+[info] +  hosting[shop-react-redux-app-80942]: version finalized 
+[info] i  hosting[shop-react-redux-app-80942]: releasing new version... 
+[debug] [2024-03-04T08:14:33.751Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/channels/live/releases versionName=projects%2F1081273773965%2Fsites%2Fshop-react-redux-app-80942%2Fversions%2F2e8bd122635893c3
+[debug] [2024-03-04T08:14:33.751Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/channels/live/releases {}
+[debug] [2024-03-04T08:14:34.380Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/channels/live/releases 200
+[debug] [2024-03-04T08:14:34.380Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/shop-react-redux-app-80942/channels/live/releases {"name":"projects/1081273773965/sites/shop-react-redux-app-80942/channels/live/releases/1709540073614000","version":{"name":"projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-04T08:14:10.042532Z","createUser":{"email":"vinhnvlfx23170@funix.edu.vn","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ6oqU8tLpN-KSXksuYI4xfM10Z91kAv0uXQ6apmXtp=mo"},"finalizeTime":"2024-03-04T08:14:33.557188Z","finalizeUser":{"email":"vinhnvlfx23170@funix.edu.vn","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ6oqU8tLpN-KSXksuYI4xfM10Z91kAv0uXQ6apmXtp=mo"}},"type":"DEPLOY","releaseTime":"2024-03-04T08:14:33.614Z","releaseUser":{"email":"vinhnvlfx23170@funix.edu.vn","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ6oqU8tLpN-KSXksuYI4xfM10Z91kAv0uXQ6apmXtp=mo"}}
+[debug] [2024-03-04T08:14:34.380Z] [hosting] release: {"name":"projects/1081273773965/sites/shop-react-redux-app-80942/channels/live/releases/1709540073614000","version":{"name":"projects/1081273773965/sites/shop-react-redux-app-80942/versions/2e8bd122635893c3","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2024-03-04T08:14:10.042532Z","createUser":{"email":"vinhnvlfx23170@funix.edu.vn","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ6oqU8tLpN-KSXksuYI4xfM10Z91kAv0uXQ6apmXtp=mo"},"finalizeTime":"2024-03-04T08:14:33.557188Z","finalizeUser":{"email":"vinhnvlfx23170@funix.edu.vn","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ6oqU8tLpN-KSXksuYI4xfM10Z91kAv0uXQ6apmXtp=mo"}},"type":"DEPLOY","releaseTime":"2024-03-04T08:14:33.614Z","releaseUser":{"email":"vinhnvlfx23170@funix.edu.vn","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJ6oqU8tLpN-KSXksuYI4xfM10Z91kAv0uXQ6apmXtp=mo"}}
+[info] +  hosting[shop-react-redux-app-80942]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/shop-react-redux-app-80942/overview
+[info] Hosting URL: https://shop-react-redux-app-80942.web.app
+[debug] [2024-03-04T08:15:00.602Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:258:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.

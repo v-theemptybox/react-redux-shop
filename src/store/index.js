@@ -8,6 +8,7 @@ const initCartState = {
   listCart: JSON.parse(localStorage.getItem("cart")) || [],
 };
 
+// popup reducer
 const visibleReducer = (state = initState, action) => {
   switch (action.type) {
     case "SHOW_POPUP":
@@ -19,6 +20,7 @@ const visibleReducer = (state = initState, action) => {
   }
 };
 
+// login, logout reducer
 const authReducer = (state = initAuthState, action) => {
   switch (action.type) {
     case "ON_LOGIN":
@@ -32,6 +34,7 @@ const authReducer = (state = initAuthState, action) => {
   }
 };
 
+// cart reducer
 const cartReducer = (state = initCartState, action) => {
   switch (action.type) {
     case "ADD_CART":

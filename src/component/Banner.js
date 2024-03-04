@@ -1,12 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./Banner.module.css";
 
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <div id={styles.banner} className="py-5 ps-5">
       <div className={`${styles["flex-left"]}`}>
         <p>NEW INSPIRATION 2024</p>
         <h2>20% OFF ON NEW SEASON</h2>
-        <button type="button" className="btn btn-dark">
+        <button
+          type="button"
+          className="btn btn-dark"
+          onClick={() => {
+            navigate("/shop");
+          }}
+        >
           Browse collections
         </button>
       </div>
