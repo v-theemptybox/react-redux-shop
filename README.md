@@ -21,6 +21,8 @@ https://shop-react-redux-app-80942.web.app/
 
 ### Deployment Guide (Local)
 
+*Note:* The following steps use npm, so users are required to download Nodejs before performing the installation.
+
 1. Open git bash or terminal,...
 2. Type ``` git clone https://github.com/v-theemptybox/react-redux-shop.git ```
 3. Open the code folder with code editors (VSCode,...)
