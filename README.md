@@ -23,3 +23,5 @@ https://shop-react-redux-app-80942.web.app/
 
 1. Open git bash or terminal,...
 2. Type ``` git clone https://github.com/v-theemptybox/react-redux-shop.git ```
+3. Open the code folder with code editors (VSCode,...)
+4. Go to **src** folder and type ``` npm install ``` then type ``` npm start ```
